@@ -7,7 +7,7 @@ const StylesSubNav = styled.div`
     display: flex;
     justify-content: center;
     align-items: baseline;
-    background-color: #000;
+    /* background-color: #000; */
     background-color: #eee;
 
     figure {
@@ -40,13 +40,11 @@ const StylesSubNav = styled.div`
         font-size: .7rem;
         color: #f00;
     }
-
 `;
-
 
 export default function MacNav(props) {
     return(
-        <StylesSubNav>
+        <StylesSubNav style={props.style}>
             {
                 props.subLinks.map(subLink => {
                     return(
@@ -54,7 +52,7 @@ export default function MacNav(props) {
                             <figure>
                                 <img src={subLink.imageUrl} alt={subLink.id}/>
                             </figure>
-                            <p>{subLink.title}</p>
+                            <p style={props.style}>{subLink.title}</p>
                             <span>{subLink.new ? 'New' : null }</span>
                         </Link>
                     );

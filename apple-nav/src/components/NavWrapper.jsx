@@ -20,6 +20,11 @@ const StylesHeader = styled.header`
     }
 `;
 
+const bgColor =  {
+    backgroundColor: '#333',
+    color: '#fff'
+}
+
 export default function NavWrapper() {
     return(
         <div>
@@ -35,7 +40,7 @@ export default function NavWrapper() {
             <div>
                 {
                     NavLinkData.map(data => {
-                        return <Route key={data.id} path={`/${data.id}`} render={(props) => <MacNav {...props} subLinks={data.subLink} />} /> 
+                        return <Route key={data.id} path={`/${data.id}`} render={(props) => <MacNav {...props} subLinks={data.subLink} style={data.title === 'TV' ? bgColor : null}/>} /> 
                     })
                 }
             </div>
