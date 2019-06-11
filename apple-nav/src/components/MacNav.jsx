@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StylesSubNav = styled.div`
-    height: 100px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: baseline;
+    background-color: #000;
     background-color: #eee;
 
     figure {
@@ -28,6 +29,7 @@ const StylesSubNav = styled.div`
     }
 
     p {
+        width: 90px;
         font-size: .7rem;
         font-weight: bold;
         margin-bottom: -5px;
