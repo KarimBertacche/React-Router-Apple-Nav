@@ -18,24 +18,27 @@ const StylesHeader = styled.header`
         padding: 10px 40px;
         text-decoration: none;
     }
-
 `;
 
 export default function NavWrapper() {
     return(
-        <StylesHeader>  
-            <nav>  
-                {
-                    NavLinkData.map(data => {
-                    return <NavLink key={data.id} className="nav-links" to={`/${data.id}`}>{data.title}</NavLink> 
-                    })
-                }
-            </nav>  
+        <div>
+            <StylesHeader>  
+                <nav>  
+                    {
+                        NavLinkData.map(data => {
+                        return <NavLink key={data.id} className="nav-links" to={`/${data.id}`}>{data.title}</NavLink> 
+                        })
+                    }
+                </nav>  
+            </StylesHeader>
+            <div>
                 {
                     NavLinkData.map(data => {
                         return <Route key={data.id} path={`/${data.id}`} render={(props) => <MacNav {...props} subLinks={data.subLink} />} /> 
                     })
                 }
-        </StylesHeader>
+            </div>
+        </div>
     );
 }

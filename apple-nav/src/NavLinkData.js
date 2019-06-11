@@ -335,10 +335,6 @@ const navLinksData = [
       },
     ],
   },
-  {
-    id: 7,
-    title: 'Support',
-  },
 ];
 
 export default navLinksData;
